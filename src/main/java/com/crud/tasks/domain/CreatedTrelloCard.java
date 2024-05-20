@@ -1,10 +1,8 @@
-package com.crud.tasks.trello.client;
+package com.crud.tasks.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import org.springframework.web.util.UriComponentsBuilder;
-
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -30,23 +28,23 @@ public class CreatedTrelloCard {
 
         @JsonProperty("attachmentsByType")
         private AttachmentsByType attachmentsByType;
+    }
 
-        @Data
-        @JsonIgnoreProperties(ignoreUnknown = true)
-        public static class AttachmentsByType {
-            @JsonProperty("trello")
-            private Trello trello;
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class AttachmentsByType {
+        @JsonProperty("trello")
+        private Trello trello;
+    }
 
-            @Data
-            @JsonIgnoreProperties(ignoreUnknown = true)
-            public static class Trello {
-                @JsonProperty("board")
-                private int board;
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Trello {
+        @JsonProperty("board")
+        private int board;
 
-                @JsonProperty("card")
-                private int card;
-            }
-        }
+        @JsonProperty("card")
+        private int card;
     }
 }
 
